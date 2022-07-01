@@ -1,0 +1,27 @@
+large|chicken|Chicken & Mushroom|104.99
+large|chicken|Sweet Chilli Chicken|99.99
+large|chicken|Tikka Chicken|107.99
+large|meaty|Four Season|107.99
+large|meaty|Hawaiian|86.99
+large|meaty|Regina|106.99
+large|veggie|3 Cheese|87.99
+large|veggie|Garlic & Mushroom|87.99
+large|veggie|Margherita|69.99
+medium|chicken|Chicken & Mushroom|74.99
+medium|chicken|Sweet Chilli Chicken|79.99
+medium|chicken|Tikka Chicken|87.99
+medium|meaty|Four Season|87.99
+medium|meaty|Hawaiian|76.99
+medium|meaty|Regina|86.99
+medium|veggie|3 Cheese|67.99
+medium|veggie|Garlic & Mushroom|67.99
+medium|veggie|Margherita|49.99
+small|chicken|Chicken & Mushroom|44.99
+small|chicken|Sweet Chilli Chicken|39.99
+small|chicken|Tikka Chicken|47.99
+small|meaty|Four Season|47.99
+small|meaty|Hawaiian|46.99
+small|meaty|Regina|56.99
+small|veggie|3 Cheese|47.99
+small|veggie|Garlic & Mushroom|47.99
+small|veggie|Margherita|29.99
