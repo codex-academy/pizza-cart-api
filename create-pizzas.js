@@ -16,25 +16,28 @@ const pizzas = rowsWithFields.map(row => {
 	}
 });
 
-console.log(pizzas);
+// console.log(pizzas);
 
-openSQLite('./pizza-cart.db')
-	.then(async db => {
+async function loadPizzas(db) {
+	try {
+		const insertPizzaSQL = `insert into pizza (size, type, flavour, price, featured) values (?, ?, ?, ?, 0)`;
 
-		await db.migrate();
+		const pizzasCreated = pizzas.map(pizza => db.run(insertPizzaSQL, 
+			pizza.size, pizza.type, pizza.flavour, pizza.price));
 
-		// console.log(pizzas.length);
+		await Promise.all(pizzasCreated)
+		console.log(`${pizzasCreated.length} pizzas created.`)
 
-		try {
-			const insertPizzaSQL = `insert into pizza (size, type, flavour, price, featured) values (?, ?, ?, ?, 0)`;
+	} catch (err) {
+		console.log(err.stack);
+	}
+}
 
-			const pizzasCreated = pizzas.map(pizza => db.run(insertPizzaSQL, 
-				pizza.size, pizza.type, pizza.flavour, pizza.price));
+module.exports = loadPizzas;
 
-			await Promise.all(pizzasCreated)
-			console.log(`${pizzasCreated.length} pizzas created.`)
-
-		} catch (err) {
-			console.log(err.stack);
-		}
-	});
+// openSQLite('./pizza-cart.db')
+// 	.then(async db => 
+// 		await db.migrate();
+// 		await loadPizzas(db);
+// 		// console.log(pizzas.length);
+// 	});
