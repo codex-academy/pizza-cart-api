@@ -4,7 +4,7 @@ URL		 | HTTP VERB  | Description
 ---------|------------|------
 `/api/pizzas`		| `GET` | Get a list of pizzas
 `/api/pizzas/featured` | `GET` | Get a list of featured pizzas
-`/api/pizzas/featured` | `POST` | set of unset a given pizza to be featured
+`/api/pizzas/featured` | `POST` | Set or unset a given pizza to be featured
 `/api/pizza-cart/create` | `GET` | Create a pizza cart
 `/api/pizza-cart/:cart_code/get`| `GET` | Get a specific pizza cart
 `/api/pizza-cart/add`		| `POST` | Add a pizza to a pizza cart
