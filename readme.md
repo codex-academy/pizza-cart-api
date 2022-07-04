@@ -11,6 +11,8 @@ URL		 | HTTP VERB  | Description
 `/api/pizza-cart/remove`	| `POST` | Remove a pizza to a pizza cart
 `/api/pizza-cart/pay`		| `POST` | Pay for a given pizza cart
 `/api/pizza-cart/username/:username`		| `GET` | Get a list of pizza carts for a given user
+`/api/pizza-cart/username/:username/active`	| `GET` | Get a users active cart
+
 
 ## Get all the pizzas
 
