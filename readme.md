@@ -54,8 +54,8 @@ With parameters like this:
 
 ```json
 {
-	cart_code : 'df4rty56',
-	pizza_id : 23
+	"cart_code" : "df4rty56",
+	"pizza_id" : 23
 
 }
 ```
