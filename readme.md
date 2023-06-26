@@ -19,7 +19,7 @@ URL		 | HTTP VERB  | Description
 To get a list of all the pizzas available use this `GET` http call:
 
 ```
-https://pizza-cart-api.herokuapp.com/api/pizzas
+http://pizza-api.projectcodex.net/api/pizzas
 ```
 
 ## Create a pizza cart
@@ -41,14 +41,14 @@ To see all the Pizza carts for a given username use this API call: `/api/pizza-c
 To see all the carts for Lindani use this API call:
 
 ```
-https://pizza-cart-api.herokuapp.com/api/pizza-cart/username/Lindani
+http://pizza-api.projectcodex.net/api/pizzas/username/Lindani
 ```
 
 ## Add or remove Pizza to a Cart
 
 To add or remove pizzas to a cart using the `/api/pizza-cart/add` or `/api/pizza-cart/remove` API end points.
 
-`https://pizza-cart-api.herokuapp.com/api/pizza-cart/add`
+`http://pizza-api.projectcodex.net/api/pizzas/api/pizza-cart/add`
 
 With parameters like this: 
 
@@ -60,7 +60,7 @@ With parameters like this:
 }
 ```
 
-The same goes for removing a pizza from the cart: `https://pizza-cart-api.herokuapp.com/api/pizza-cart/remove`
+The same goes for removing a pizza from the cart: `http://pizza-api.projectcodex.net/api/pizza-cart/remove`
 
 ## See a cart's contents
 
