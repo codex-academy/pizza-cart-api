@@ -19,7 +19,7 @@ URL		 | HTTP VERB  | Description
 To get a list of all the pizzas available use this `GET` http call:
 
 ```
-http://pizza-api.projectcodex.net/api/pizzas
+https://pizza-api.projectcodex.net/api/pizzas
 ```
 
 ## Create a pizza cart
@@ -31,7 +31,7 @@ When you pay you will need to specify which `cart_code` to use.
 To link a pizza to a given username add a `username` parameter to the API call.
 
 ```
-http://pizza-api.projectcodex.net/api/pizza-cart/create?username=Lindani
+https://pizza-api.projectcodex.net/api/pizza-cart/create?username=Lindani
 ```
 
 The above call will create a new pizza cart and link it to `Lindani`.
@@ -41,14 +41,14 @@ To see all the Pizza carts for a given username use this API call: `/api/pizza-c
 To see all the carts for Lindani use this API call:
 
 ```
-http://pizza-api.projectcodex.net/api/pizzas/username/Lindani
+https://pizza-api.projectcodex.net/api/pizzas/username/Lindani
 ```
 
 ## Add or remove Pizza to a Cart
 
 To add or remove pizzas to a cart using the `/api/pizza-cart/add` or `/api/pizza-cart/remove` API end points.
 
-`http://pizza-api.projectcodex.net/api/pizzas/api/pizza-cart/add`
+`https://pizza-api.projectcodex.net/api/pizzas/api/pizza-cart/add`
 
 With parameters like this: 
 
