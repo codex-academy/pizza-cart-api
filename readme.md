@@ -31,7 +31,7 @@ When you pay you will need to specify which `cart_code` to use.
 To link a pizza to a given username add a `username` parameter to the API call.
 
 ```
-https://pizza-cart-api.herokuapp.com/api/pizza-cart/create?username=Lindani
+http://pizza-api.projectcodex.net/api/pizza-cart/create?username=Lindani
 ```
 
 The above call will create a new pizza cart and link it to `Lindani`.
