@@ -71,3 +71,11 @@ To see a cart and all it's contents use the `/api/pizza-cart/:cart_code/get` cal
 To pay for a cart you can use this call: `/api/pizza-cart/pay`
 
 You need to specify the `cart_code` you are paying for and the amount you are paying. The amount you are paying for need to be more than the total amount due in the cart. If the payment is successfull the cart status will be changed to `paid`.
+
+```json
+{
+	"cart_code" : "df4rty56",
+	"amount" : 200
+
+}
+```
