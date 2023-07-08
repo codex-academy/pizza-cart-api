@@ -30,20 +30,51 @@ module.exports = function (app, db) {
 	});
 
 	app.get('/api/pizzas/featured', async (req, res) => {
-		const pizzas = await db.all(`select * from pizza where featured = true`);
-		res.json({
-			pizzas
-		});
+		const username = req.query.username;
+		let pizzas = [];
+		if (username) {
+			pizzas = await db.all(`select * from featured_pizzas join pizza 
+				on pizza.id = featured_pizzas.pizza_id  where username = ?`, username);
+			
+			res.json({
+				status: "success",
+				username,
+				pizzas
+			})
+		} else {
+			res.json({
+				status : 'error',
+				message: "username require"
+			})
+		}
+
 	});
 
 	app.post('/api/pizzas/featured/', async (req, res) => {
 
-		const {pizzaId, featured} = req.body;
-		await db.run(`update pizza set featured = ? where id = ?`, featured, pizzaId);
+		const {pizza_id, username} = req.body;
 
-		res.json({
-			status: 'success'
-		})
+		if (!pizza_id || !username) {
+			res.json({
+				status : 'error',
+				message : "username & pizza_id required"
+			})
+		} else {
+
+			await db.run(`insert into featured_pizzas(username, pizza_id) values (?, ?)`, username, pizza_id);
+	
+			const {count} = await db.get(`select count(*) as count from featured_pizzas where username = ? `, username);
+			// ensure only 3 pizzas are featured.
+			if (count > 3) {
+				const {id} = await db.get(`select id from featured_pizzas where username = ? order by id asc limit 1`, username);
+				await db.run(`delete from featured_pizzas where id = ?`, id)
+			}
+	
+			res.json({
+				status: 'success'
+			})
+		}
+
 	});
 
 

@@ -65,3 +65,18 @@ content-type: application/json
 }
 
 
+### Get featured pizzas
+
+
+GET http://localhost:4009/api/pizzas/featured?username=avermeulen
+
+
+### SET featured pizzas
+
+POST http://localhost:4009/api/pizzas/featured
+content-type: application/json
+
+{
+	"username" : "avermeulen",
+	"pizza_id" : 13
+}

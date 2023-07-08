@@ -3,8 +3,6 @@
 URL		 | HTTP VERB  | Description
 ---------|------------|------
 `/api/pizzas`		| `GET` | Get a list of pizzas
-`/api/pizzas/featured` | `GET` | Get a list of featured pizzas
-`/api/pizzas/featured` | `POST` | Set or unset a given pizza to be featured
 `/api/pizza-cart/create` | `GET` | Create a pizza cart
 `/api/pizza-cart/:cart_code/get`| `GET` | Get a specific pizza cart
 `/api/pizza-cart/add`		| `POST` | Add a pizza to a pizza cart
@@ -12,6 +10,8 @@ URL		 | HTTP VERB  | Description
 `/api/pizza-cart/pay`		| `POST` | Pay for a given pizza cart
 `/api/pizza-cart/username/:username`		| `GET` | Get a list of pizza carts for a given user
 `/api/pizza-cart/username/:username/active`	| `GET` | Get a users active cart
+`/api/pizzas/featured?username=your_name` | `GET` | Get a list of featured pizzas for a given user
+`/api/pizzas/featured` | `POST` | Set a given pizza id to be featured - max 3 ids
 
 
 ## Get all the pizzas
@@ -79,3 +79,20 @@ You need to specify the `cart_code` you are paying for and the amount you are pa
 
 }
 ```
+
+## Featured Pizzas
+
+3 Featured pizzas can be set for for a username.
+
+Use the POST call - `/api/pizzas/featured` to set featured pizzas for a given username
+
+```json
+{
+	"username" : "username_here",
+	"pizza_id" : 7
+}
+```
+
+A max of 3 pizzas can be featured. The last featured pizza added will remove the oldest featured pizza.
+
+Use the `/api/pizzas/featured?username=username_here` GET call to get all the featured pizzas for a given user.
